@@ -34,6 +34,7 @@ mkdir out;
 print -deps out/mla.eps;
 
 % Native octave plotting sucks. Write CSV files for better plotting.
-csvwrite("out/final_ml.dat", final_ml);
-csvwrite("out/final_algo.dat", final_algo);
-csvwrite("out/boundary.dat", [line_x line_y]);
+line_mat = [line_x line_y];
+save("-ascii", "out/final_ml.dat", "final_ml");
+save("-ascii", "out/final_algo.dat", "final_algo");
+save("-ascii", "out/boundary.dat", "line_mat");
